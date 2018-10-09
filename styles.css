@@ -27,6 +27,7 @@ h1 {
   margin: 20px 0;
 }
 
+
 .text {
   margin-bottom: 20px;
 }
@@ -44,7 +45,7 @@ h1 {
 
 .grid__row {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   margin-left: -10px;
   margin-right: -10px;
 }
@@ -57,21 +58,147 @@ h1 {
 
 /* TODO setja upp grid fyrir >= 1000px */
 
+
 /* TODO koma mynd fyrir á öðrum stað í < 1000px */
 
 /* grid fyrir cards */
 
 .cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background: #eee;
+  width:100%;
 }
 
-/* TODO útfæra grid fyrir cards */
+.card {
+  display: flex;
+  flex-direction: column;
 
-/*
-  .card kemur óbreytt úr sýnilausn á verkefni 5 fyrir utan responsive stíla og
-  að það fær `height: 100%;`
-  Sýnilausn verður gefin út við lok dags miðvikudaginn 3. okt
-*/
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 100%;
+  max-width: 470px;
+  max-height: 300px;
+  overflow: hidden;
 
-/* TODO .card stílar úr v5 (eða sýnilausn...) */
+  background-color: #fff;
+  border: 2px solid #aaa;
+  border-radius: 5px;
+}
+
+.card__title {
+  margin-bottom: 20px;
+
+  font-size: 1.375em;
+  line-height: 1;
+  word-break: break-word;
+}
+.card__row{
+  display: flex;
+  flex-direction:row;
+  width:100%;
+}
+
+.card__content {
+  display: flex;
+  flex: 1;
+}
+
+.card__text {
+  font-size: 1em;
+  line-height: 1.375;
+  overflow: auto;
+  word-break: break-word;
+}
+
+.card__image {
+  padding-left: 20px;
+  flex: 0 0 150px;
+}
+
+.card__img {
+  max-width: 100%;
+}
+
+.card__tags {
+  margin-top: 10px;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  list-style: none;
+}
+
+.card__tag {
+  font-weight: bold;
+  margin-right: 10px;
+}
+.card__col{
+    width:auto;
+}
+.card__row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    flex-direction:row;
+}
+
+@media screen and (min-width: 1490px){
+  main{
+    padding-left: 0px;
+    padding-right: 0px;
+
+  }
+}
+@media screen and (max-width: 1000px){
+  .grid__col{
+    width: 50%;
+    margin-bottom: 40px;
+  }
+  .grid__row{
+    display:flex;
+    flex-direction: row;
+  }
+  .card{
+    width: 33.3333333%;
+  }
+  .cards{
+    justify-content: space-around;
+  }
+
+}
+@media screen and (max-width: 700px) {
+  .grid{
+    margin-bottom: 1rem;
+  }
+  .card__content{
+    flex-direction: column;
+  }
+  .card{
+    max-height: 100%;
+    width:auto;
+    border-radius: 0;
+    border-bottom: 2px solid #aaa;
+    margin-bottom: 0;
+    flex-direction: row;
+  }
+  .card__image{
+    margin-top: 1rem;
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .card{
+    height: 100%;
+  }
+}
+
+
+
+
+
 
 /* TODO responsive stílar fyrir .card */
